@@ -30,6 +30,8 @@ public class Order implements Serializable {
 
 	private Integer orderStatus;
 
+	// Relação muitos-para um
+	// Coluna client_id adicionada na tabela de Order
 	@ManyToOne
 	@JoinColumn(name = "client_id")
 	@JsonIgnore

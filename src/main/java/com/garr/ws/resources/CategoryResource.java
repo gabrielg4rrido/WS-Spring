@@ -17,18 +17,18 @@ import com.garr.ws.services.CategoryService;
 public class CategoryResource {
 	
 	@Autowired
-	private CategoryService userService;
+	private CategoryService categoryService;
 	
 	@GetMapping
 	public ResponseEntity<List<Category>> findAll() {
-		List<Category> listOfCategories = userService.findAll();
+		List<Category> listOfCategories = categoryService.findAll();
 		return ResponseEntity.ok().body(listOfCategories);
 	}
 	
 	
 	@GetMapping(value="/{id}")
 	public ResponseEntity<Category> findById(@PathVariable Long id){
-		Category category = userService.findById(id);
+		Category category = categoryService.findById(id);
 		return ResponseEntity.ok().body(category);
 	}
 }
